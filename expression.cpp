@@ -1,8 +1,34 @@
 
+#include <iostream>
 #include <string>
 #include <stack>
 
 using namespace std;
+
+int getPriority(char opt);
+bool InfixToPostfix(string strInfix,string &strPostfix);
+bool PostCalcValue(string strPostfix, __int64 *pi64RetValue);
+
+
+int main(int argc, char* argv[])
+{
+	//string strInfix = "1 + ((2 + 3) * 4) -   5.";
+	string strInfix;
+	cin >> strInfix;
+ 	string strPostret;
+	__int64 i64Value;
+
+	if (!InfixToPostfix(strInfix, strPostret)){
+		cout << "expression error";
+		return 1;
+	}
+	if (!PostCalcValue(strPostret, &i64Value)){
+		cout << "CalcValue error";
+		return 1;
+	}
+	cout << i64Value;
+	return 0;
+}
 
 //后缀表达式求值
 bool PostCalcValue(string strPostfix, __int64 *pi64RetValue)
