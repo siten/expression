@@ -127,7 +127,7 @@ bool InfixToPostfix(string strInfix,string &strPostfix)
 			}
 			continue;
 		}
-		if(*itIn>='0' && *itIn<='9')			////////////////数字处理
+		if(*itIn>='0' && *itIn<='9')					////////////////数字处理
 		{
 			while(itIn!=strInfix.end()){
 				if (*itIn<='0' || *itIn>='9'){
@@ -141,7 +141,7 @@ bool InfixToPostfix(string strInfix,string &strPostfix)
 		}
 		if (*itIn == '('){						////////////////'('符号处理
 			stOpe.push(*itIn);
-		}else if (*itIn == ')'){				////////////////'）'符号处理
+		}else if (*itIn == ')'){					////////////////'）'符号处理
 			bool isOK = false;
 			while(!stOpe.empty()){
 				chstOpe = stOpe.top();
@@ -190,7 +190,7 @@ bool InfixToPostfix(string strInfix,string &strPostfix)
 				}
 			}
 		}else{
-			return false;						////////////////其他字符错误
+			return false;							////////////////其他字符错误
 		}
 		itIn++;
 	}
