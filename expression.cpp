@@ -203,7 +203,7 @@ bool InfixToPostfix(string strInfix,string &strPostfix)
 					if (nCurOpePriority > nSttopOpePriority){	//当前操作符优先级高，当前操作符入栈
 						stOpe.push(*itIn);
 						break;
-					}else{										//当前操作符优先级低或相等，栈中的操作符出栈
+					}else{						//当前操作符优先级低或相等，栈中的操作符出栈
 						strPostfix += chstOpe;
 						strPostfix += ' ';
 
