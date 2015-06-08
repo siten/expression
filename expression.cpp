@@ -156,7 +156,7 @@ bool InfixToPostfix(string strInfix,string &strPostfix)
 		if(*itIn>='0' && *itIn<='9')					////////////////数字处理
 		{
 			while(itIn!=strInfix.end()){
-				if (*itIn<='0' || *itIn>='9'){
+				if (*itIn<'0' || *itIn>'9'){
 					break;
 				}
 				strPostfix += *itIn;
